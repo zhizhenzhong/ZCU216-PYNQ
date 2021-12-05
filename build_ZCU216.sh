@@ -21,8 +21,8 @@ echo `date` > runtime.txt
 export buildroot=`pwd`
 
 # NOTE link to your appropriate files here:
-prebuilt=/home/sara/Downloads/focal.aarch64.2.7.0_2021_11_17.tar.gz
-bsp=/home/sara/Downloads/xilinx-zcu216-v2020.2-final.bsp
+prebuilt=/home/zhizhenzhong/focal.aarch64.2.7.0_2021_11_17.tar.gz
+bsp=/home/zhizhenzhong/xilinx-zcu216-v2020.2-final.bsp
  
 
 if [ ! -e "$prebuilt" ]; then
@@ -37,7 +37,7 @@ fi
 
 if [ ! -d "ZCU216-PYNQ" ]; then
 
-    git clone --recursive https://github.com/sarafs1926/ZCU216-PYNQ
+    git clone --recursive https://github.com/zhizhenzhong/ZCU216-PYNQ
 
 fi
 
