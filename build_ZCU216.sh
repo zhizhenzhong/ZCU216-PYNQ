@@ -67,6 +67,11 @@ cp -a ZCU216-PYNQ/tics/. ZCU216-PYNQ/PYNQ/sdbuild/packages/xrfclk/package/xrfclk
 
 pushd ZCU216-PYNQ/PYNQ/sdbuild
 
+bash /home/zhizhenzhong/ZCU216-PYNQ/ZCU216-PYNQ/PYNQ/sdbuild/scripts/setup_host.sh
+source /tools/XilinxSw/Vitis/2020.2/settings64.sh
+source /tools/Xilinx/PetaLinux/2020.2/bin/settings.sh
+petalinux-util --webtalk off
+
 make BOARDDIR=$buildroot/ZCU216-PYNQ PREBUILT=$prebuilt
 
  
