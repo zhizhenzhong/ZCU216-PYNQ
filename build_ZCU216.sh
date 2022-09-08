@@ -21,7 +21,11 @@ echo `date` > runtime.txt
 export buildroot=`pwd`
 
 # NOTE link to your appropriate files here:
+<<<<<<< HEAD
 prebuilt=/home/zhizhenzhong/ZCU216PYNQFILES/focal.aarch64.2.7.0_2021_11_17.tar.gz
+=======
+prebuilt=/home/zhizhenzhong/focal.aarch64.2.7.0_2021_11_17.tar.gz
+>>>>>>> ba0af1f4bce4d9ee7938a73a8e415d7ed484ae4e
 bsp=/home/zhizhenzhong/xilinx-zcu216-v2020.2-final.bsp
  
 
@@ -37,7 +41,7 @@ fi
 
 if [ ! -d "ZCU216-PYNQ" ]; then
 
-    git clone --recursive https://github.com/sarafs1926/ZCU216-PYNQ
+    git clone --recursive https://github.com/zhizhenzhong/ZCU216-PYNQ
 
 fi
 
@@ -66,6 +70,14 @@ popd
 cp -a ZCU216-PYNQ/tics/. ZCU216-PYNQ/PYNQ/sdbuild/packages/xrfclk/package/xrfclk/
 
 pushd ZCU216-PYNQ/PYNQ/sdbuild
+
+bash /home/zhizhenzhong/ZCU216-PYNQ/ZCU216-PYNQ/PYNQ/sdbuild/scripts/setup_host.sh
+
+export PATH=/opt/qemu/bin:/opt/crosstool-ng/bin:$PATH
+
+source /tools/XilinxSw/Vitis/2020.2/settings64.sh
+source /tools/Xilinx/PetaLinux/2020.2/bin/settings.sh
+petalinux-util --webtalk off
 
 make BOARDDIR=$buildroot/ZCU216-PYNQ PREBUILT=$prebuilt
 
